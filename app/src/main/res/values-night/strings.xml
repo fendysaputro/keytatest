@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="txt_title_header">Daftar Item</string>
+    <string name="txt_simpan">Simpan</string>
+    <string name="txt_item">Item</string>
+</resources>

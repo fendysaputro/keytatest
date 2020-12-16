@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">keytatest</string>
+    <string name="txt_title_header">Daftar Item</string>
+    <string name="txt_title_header_two">Daftar Item Tersimpan</string>
+    <string name="txt_simpan">Simpan</string>
+    <string name="txt_item">Item</string>
+</resources>
