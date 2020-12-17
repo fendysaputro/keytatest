@@ -11,6 +11,7 @@ import com.phephen.keytatest.databinding.ActivityMainBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.ArrayList
 
 class MainActivity : AppCompatActivity() {
 
@@ -46,12 +47,14 @@ class MainActivity : AppCompatActivity() {
                 progressBar.visibility = View.GONE
                 if (response.isSuccessful) {
                     val datas = response.body()
-                    if (datas != null) {
-                        for (data in datas) {
+                    for (i in datas!!.indices) {
+                        if (i < datas.size) {
+                        val data = datas[i]
                             etName.isEnabled = false
-                            var newName: String = data.name.toString()
-                            newName = newName.replace(" ", ", ")
+                            val name: String = data.name.toString()
+                            val newName = name.replace(" ", ", ")
                             etName.setText(newName)
+                            println(newName)
 
                             btnSave.setOnClickListener {
                                 val intent = Intent(this@MainActivity, SpinnerActivity::class.java)
@@ -60,7 +63,6 @@ class MainActivity : AppCompatActivity() {
                             }
                         }
                     }
-
                 }
             }
 

@@ -39,7 +39,35 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:spinnerMode="dropdown"
+        android:visibility="visible"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        />
+
+    <TextView
+        android:id="@+id/tv_item_selected_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Item dipilih"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_item_selected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_item_selected_title"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        android:text="Mr. Alex"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         />
 
 
@@ -50,8 +78,6 @@
         android:text="@string/txt_simpan"
         android:background="@drawable/bg_button"
         android:layout_margin="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         />
 
