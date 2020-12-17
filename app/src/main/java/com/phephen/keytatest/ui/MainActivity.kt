@@ -47,14 +47,12 @@ class MainActivity : AppCompatActivity() {
                 progressBar.visibility = View.GONE
                 if (response.isSuccessful) {
                     val datas = response.body()
+                    val arrayList: MutableList<String> = mutableListOf()
                     for (i in datas!!.indices) {
                         if (i < datas.size) {
                         val data = datas[i]
                             etName.isEnabled = false
-                            val name: String = data.name.toString()
-                            val newName = name.replace(" ", ", ")
-                            etName.setText(newName)
-                            println(newName)
+                            data.name?.let { arrayList.add(it) }
 
                             btnSave.setOnClickListener {
                                 val intent = Intent(this@MainActivity, SpinnerActivity::class.java)
@@ -63,6 +61,7 @@ class MainActivity : AppCompatActivity() {
                             }
                         }
                     }
+                    etName.setText(arrayList.joinToString(separator = " ,"))
                 }
             }
 
